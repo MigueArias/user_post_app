@@ -1,0 +1,20 @@
+<h1>Estos son los usuarios</h1>
+
+<%= link_to 'Nuevo usuario', new_user_path %>
+
+<table>
+  <tr>
+    <th>Nombre</th>
+    <th>Acción</th>
+    <th colspan="3"></th>
+  </tr>
+ 
+  <% @users.each do |user| %>
+    <tr>
+      <td><%= user.name %></td>
+      <td><%= link_to 'Mostrar', user_path(user) %></td>
+      <td><%= link_to 'Editar', edit_user_path(user) %></td>
+      <td><%= link_to 'Borrar', user_path(user), method: :delete, data: { confirm: 'Esta seguro?' } %></td>
+    </tr>
+  <% end %>
+</table>

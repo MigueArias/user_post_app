@@ -1,0 +1,19 @@
+<h1>Crea un usuario</h1>
+
+<%= form_for @user do |u|%>
+  <% if @user.errors.any? %>
+  <div id="error_explanation">
+    <h2><%= pluralize(@user.errors.count, "error") %> no puede dejar guardar el usuario:</h2>
+    <ul>
+    <% @user.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+  <% end %>
+  <%= u.text_field :name, placeholder: "Nombre de usuario" %>
+  <%= u.text_field :mail, placeholder: "Mail" %>
+  <%= u.submit%>
+<%end%>
+
+<%= link_to 'Regresa', users_path %>

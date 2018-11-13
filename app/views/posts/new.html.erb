@@ -1,0 +1,10 @@
+<h1>Crea un post</h1>
+
+<%= form_for @post do |p|%>
+  <%= p.text_field :title, placeholder: "Titulo" %>
+  <%= p.text_field :description, placeholder: "Descripción" %>
+  <%= p.select :user_id, options_from_collection_for_select(@users, 'id', 'name') %>
+  <%= p.submit%>
+<%end%>
+
+<%= link_to 'Regresa', posts_path %>

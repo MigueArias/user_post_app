@@ -1,0 +1,8 @@
+<h1>Crea un post</h1>
+
+<%= form_for @post do |p|%>
+  <%= p.text_field :description, placeholder: "Descripción" %>
+  <%= p.submit%>
+<%end%>
+
+<%= link_to 'Regresa', posts_path %>

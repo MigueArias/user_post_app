@@ -1,0 +1,9 @@
+<h1>Editando usuario</h1>
+ 
+<%= form_for @user do |u|%>
+  <%= u.text_field :name %>
+  <%= u.text_field :mail %>
+  <%= u.submit%>
+<%end%>
+ 
+<%= link_to 'Regresa', users_path %>
